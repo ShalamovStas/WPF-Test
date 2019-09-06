@@ -8,13 +8,14 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="White" >
     <Grid >
+
         <StackPanel Margin="10 0">
             <ItemsControl x:Name="ListViewProducts" ItemsSource="{Binding Product}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border Margin="1" Width="320" Height="260">
-                            
-                            <Button Click="Image_Click" >
+
+                            <Button  Click="Image_Click" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="{x:Type Button}">
                                         <Border Name="Border" >

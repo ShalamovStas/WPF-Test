@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Resources;
 using System.Windows.Shapes;
 
 namespace HorizontalList
@@ -31,14 +33,18 @@ namespace HorizontalList
 
         private List<Card> GetProducts()
         {
-            var files = Directory.GetFiles("../../Assets", "*.png");
-            List<Card> cards = new List<Card>();
-            foreach (var filePath in files)
-            {
-                FileInfo fileInf = new FileInfo(filePath);
-                cards.Add(new Card(ParseFileName(fileInf.Name), fileInf.FullName));
-            }
 
+
+
+            //var files = Directory.GetFiles("../../Assets", "*.png");
+            List<Card> cards = new List<Card>();
+            // foreach (var filePath in files)
+            // {
+            //  FileInfo fileInf = new FileInfo(filePath);
+            //  cards.Add(new Card(ParseFileName(fileInf.Name), fileInf.FullName));
+            //}
+
+            cards.Add(new Card(ParseFileName("11.png"), "Assets/11.png"));
 
             return cards;
         }
@@ -53,7 +59,40 @@ namespace HorizontalList
         {
             //this.MyImageSource = new BitmapImage(...); //you change source of the Image
 
-            
+            //var item = sender.
+            var c = (sender as Button).Content;
+            var childrens = (c as StackPanel).Children;
+
+            var text = (childrens[1] as TextBlock).Text;
+
+            var bitmap = new BitmapImage(new Uri("Assets/" + text + ".png", UriKind.Relative));
+
+
+            var path = System.IO.Path.GetDirectoryName(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + @"\Documents\Cards\";
+
+            if (!File.Exists(path + text + ".png"))
+            {
+
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                StreamResourceInfo res = Application.GetResourceStream(new Uri("Assets/" + text + ".png", UriKind.Relative));
+
+                using (var stream = res.Stream)
+                {
+                    stream.CopyTo(new FileStream(path + text + ".png", FileMode.Create));
+                }
+            }
+
+
+
+            Process objProcess = new Process();
+            objProcess.StartInfo.FileName = "explorer";
+            objProcess.StartInfo.Arguments = path + text + ".png";
+
+            objProcess.Start();
+
+
         }
     }
 }

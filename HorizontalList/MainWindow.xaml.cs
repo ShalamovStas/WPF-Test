@@ -25,6 +25,8 @@ namespace HorizontalList
         public MainWindow()
         {
             InitializeComponent();
+            GridPrincipal.Children.Clear();
+            GridPrincipal.Children.Add(new StartControl());
 
         }
 
@@ -47,9 +49,26 @@ namespace HorizontalList
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new CardsListcontrol());
                     break;
+                case 2:
+                    GridPrincipal.Children.Clear();
+                    break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    break;
+                case 4:
+                    Application.Current.Shutdown();
+                    break;
                 default:
                     break;
             }
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            // Shutdown the application.
+            Application.Current.Shutdown();
+            // OR You can Also go for below logic
+            // Environment.Exit(0);
         }
 
     }
