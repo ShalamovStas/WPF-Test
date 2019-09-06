@@ -5,25 +5,47 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HorizontalList"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="White" >
+    <Grid >
         <StackPanel Margin="10 0">
             <ItemsControl x:Name="ListViewProducts" ItemsSource="{Binding Product}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border Margin="1" Width="320" Height="260">
-                            <Button Command="{Binding MyCommand}">
-                            <StackPanel>
-                                <Border Width="300" Height="200" CornerRadius="1" Margin="1">
-                                    <Border.Effect>
-                                        <DropShadowEffect ShadowDepth="1"/>
-                                    </Border.Effect>
-                                    <Border.Background>
-                                        <ImageBrush ImageSource="{Binding Image}"/>
-                                    </Border.Background>
-                                </Border>
-                                <TextBlock Margin="5 5" Text="{Binding Name}" FontSize="20" HorizontalAlignment="Center"/>
-                            </StackPanel>
+                            
+                            <Button Click="Image_Click" >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Name="Border" >
+                                            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="Button.IsFocused" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="White" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="White" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                
+                                
+                                
+                                
+                                
+                                <StackPanel>
+                                    <Border Width="300" Height="200" CornerRadius="1" Margin="1">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="1"/>
+                                        </Border.Effect>
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{Binding Image}"/>
+                                        </Border.Background>
+                                    </Border>
+                                    <TextBlock Margin="5 5" Text="{Binding Name}" FontSize="20" HorizontalAlignment="Center"/>
+                                </StackPanel>
                             </Button>
                         </Border>
                     </DataTemplate>

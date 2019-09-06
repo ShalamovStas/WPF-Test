@@ -61,7 +61,7 @@
         </Border>
 
         <ScrollViewer Grid.Column="1" Grid.Row="1" Background="#FFF1F1F1">
-            <Grid Margin="10 10 10 10">
+            <Grid Margin="10 10 10 10" Background="White" >
                 <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </ScrollViewer>

@@ -48,5 +48,12 @@ namespace HorizontalList
         {
             return fileName.Remove(fileName.Length - 4);
         }
+
+        private void Image_Click(object sender, RoutedEventArgs e)
+        {
+            //this.MyImageSource = new BitmapImage(...); //you change source of the Image
+
+            
+        }
     }
 }
