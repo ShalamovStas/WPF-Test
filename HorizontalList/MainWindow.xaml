@@ -18,10 +18,18 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
 
 
-        <Border>
+        <Grid Grid.Column="0" Grid.Row="0"  VerticalAlignment="Stretch" Background="#FF196176" Grid.ColumnSpan="2">
+            <TextBlock x:Name="Title" Text="Главное меню" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        </Grid>
+
+        <Border Grid.Column="0" Grid.Row="1" >
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF15206A" Offset="0"/>
@@ -30,9 +38,9 @@
                 </LinearGradientBrush>
             </Border.Background>
 
-            <Grid>
+            <Grid >
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Салтовский Парк" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="40" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
+                    <TextBlock Text="..." TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="40" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
                     <TextBlock Text="Участки" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
 
                     <ListView BorderThickness="0" x:Name="ListViewMenu" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="0" Background="{x:Null}" >
@@ -81,16 +89,9 @@
             </Grid>
         </Border>
         <Grid Grid.Column="1" Grid.Row="1" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
 
-            <Grid Grid.Column="0" Grid.Row="0"  VerticalAlignment="Stretch" Background="#FF196176">
-                <TextBlock x:Name="Title" Text="Главное меню" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-            </Grid>
 
-                <Grid Grid.Column="0" Grid.Row="2" Background="#FFF1F1F1" >
+            <Grid Background="#FFF1F1F1" >
                     <Grid x:Name="GridPrincipal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 </Grid>
         </Grid>
