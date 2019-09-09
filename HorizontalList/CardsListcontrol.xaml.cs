@@ -59,7 +59,6 @@ namespace HorizontalList
 
             var text = (childrens[1] as TextBlock).Text;
 
-            var proc = Process.GetCurrentProcess();
             Process objProcess = new Process();
             objProcess.StartInfo.FileName = "explorer";
             objProcess.StartInfo.Arguments = GlobalVariables.tempFolder + text + ".png";

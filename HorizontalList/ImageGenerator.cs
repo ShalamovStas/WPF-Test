@@ -28,8 +28,8 @@ namespace HorizontalList
 
         private string JoinImages(A4_Paper paper)
         {
-            var fileName = GenerateFileName(paper.Cards);
-            var fullPathfile = GlobalVariables.tempFolder + @"Print\" + fileName;
+            //var fileName = GenerateFileName(paper.Cards);
+            var fullPathfile = GlobalVariables.tempFolderPrint + paper.PaperName;
             var result = new Bitmap(3532, 2497);
             List<string> imgNames = new List<string>(4);
             List<Bitmap> bitmapList = new List<Bitmap>(4);
@@ -89,8 +89,8 @@ namespace HorizontalList
                     }
                 }
 
-                if (!Directory.Exists(GlobalVariables.tempFolder + @"Print\"))
-                    Directory.CreateDirectory(GlobalVariables.tempFolder + @"Print\");
+                if (!Directory.Exists(GlobalVariables.tempFolderPrint))
+                    Directory.CreateDirectory(GlobalVariables.tempFolderPrint);
 
                 result.Save(fullPathfile, ImageFormat.Png);
                 g.Flush();
@@ -100,17 +100,17 @@ namespace HorizontalList
             return fullPathfile;
         }
 
-        private object GenerateFileName(Card[] cards)
-        {
-            var name = "";
-            foreach (var card in cards)
-            {
-                if (card == null)
-                    break;
-                name += card.Name;
-            }
-            return name + ".png";
-        }
+       // private object GenerateFileName(Card[] cards)
+       // {
+       //     var name = "";
+       //     foreach (var card in cards)
+       //     {
+       //         if (card == null)
+       //             break;
+       //         name += card.Name;
+       //     }
+       //     return name + ".png";
+       // }
 
         private Bitmap BitmapImage2Bitmap(Uri uri)
         {
