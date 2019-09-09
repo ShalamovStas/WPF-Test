@@ -34,18 +34,15 @@ namespace HorizontalList
         private List<Card> GetProducts()
         {
 
-
-
-            //var files = Directory.GetFiles("../../Assets", "*.png");
+            List<string> fileNames = new List<string>();
             List<Card> cards = new List<Card>();
-            // foreach (var filePath in files)
-            // {
-            //  FileInfo fileInf = new FileInfo(filePath);
-            //  cards.Add(new Card(ParseFileName(fileInf.Name), fileInf.FullName));
-            //}
 
-            cards.Add(new Card(ParseFileName("11.png"), "Assets/11.png"));
+            for (int i = 0; i < GlobalVariables.assets.Length; i++)
+            {
+                cards.Add(new Card(ParseFileName(GlobalVariables.assets[i]), "Assets/" + GlobalVariables.assets[i]));
+            }
 
+            SaveCardsToDir();
             return cards;
         }
 
@@ -57,42 +54,36 @@ namespace HorizontalList
 
         private void Image_Click(object sender, RoutedEventArgs e)
         {
-            //this.MyImageSource = new BitmapImage(...); //you change source of the Image
-
-            //var item = sender.
             var c = (sender as Button).Content;
             var childrens = (c as StackPanel).Children;
 
             var text = (childrens[1] as TextBlock).Text;
 
-            var bitmap = new BitmapImage(new Uri("Assets/" + text + ".png", UriKind.Relative));
-
-
-            var path = System.IO.Path.GetDirectoryName(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + @"\Documents\Cards\";
-
-            if (!File.Exists(path + text + ".png"))
-            {
-
-                if (!Directory.Exists(path))
-                    Directory.CreateDirectory(path);
-
-                StreamResourceInfo res = Application.GetResourceStream(new Uri("Assets/" + text + ".png", UriKind.Relative));
-
-                using (var stream = res.Stream)
-                {
-                    stream.CopyTo(new FileStream(path + text + ".png", FileMode.Create));
-                }
-            }
-
-
-
+            var proc = Process.GetCurrentProcess();
             Process objProcess = new Process();
             objProcess.StartInfo.FileName = "explorer";
-            objProcess.StartInfo.Arguments = path + text + ".png";
-
+            objProcess.StartInfo.Arguments = GlobalVariables.tempFolder + text + ".png";
             objProcess.Start();
+        }
 
+        private void SaveCardsToDir()
+        {
 
+            if (!Directory.Exists(GlobalVariables.tempFolder))
+                Directory.CreateDirectory(GlobalVariables.tempFolder);
+            
+            foreach (var name in GlobalVariables.assets)
+            {
+                if (!File.Exists(GlobalVariables.tempFolder + name))
+                {
+                    var bitmap = new BitmapImage(new Uri("Assets/" + name, UriKind.Relative));
+
+                    using (var stream = Application.GetResourceStream(new Uri("Assets/" + name, UriKind.Relative)).Stream)
+                    {
+                        stream.CopyTo(new FileStream(GlobalVariables.tempFolder + name, FileMode.Create));
+                    }
+                }
+            }
         }
     }
 }

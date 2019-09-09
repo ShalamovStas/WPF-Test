@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Height="600" Width="1080"
         FontFamily="The Medic Demo"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        >
     <Grid>
 
 
@@ -31,8 +32,8 @@
 
             <Grid>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Title" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="40" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
-                    <TextBlock Text="title" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
+                    <TextBlock Text="Салтовский Парк" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="40" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
+                    <TextBlock Text="Участки" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
 
                     <ListView BorderThickness="0" x:Name="ListViewMenu" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="0" Background="{x:Null}" >
                         <ListViewItem>
@@ -41,7 +42,8 @@
                                 <TextBlock Text="Главное меню" VerticalAlignment="Center" Margin="5" FontSize="18" Foreground="White" />
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        
+                        <ListViewItem >
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="BoxVariant" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                                 <TextBlock Text="Карточки участков" VerticalAlignment="Center" Margin="5" FontSize="18" Foreground="White"/>
@@ -55,11 +57,20 @@
                         </ListViewItem>
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="BoxVariant" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                                <TextBlock Text="Печать участков" VerticalAlignment="Center" Margin="5" FontSize="18" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+
+
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                                 <TextBlock Text="Настройки" VerticalAlignment="Center" Margin="5" FontSize="18" Foreground="White"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem  Padding="0 5 0 0">
+                        <ListViewItem>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="ExitRun" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                                 <TextBlock Text="Выход" VerticalAlignment="Center" Margin="5" FontSize="18" Foreground="White"/>
@@ -71,27 +82,17 @@
         </Border>
         <Grid Grid.Column="1" Grid.Row="1" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Column="0" Grid.Row="0"  Height="70" VerticalAlignment="Top" Background="#FF44914B">
-                <TextBlock Text="Title" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <Grid Grid.Column="0" Grid.Row="0"  VerticalAlignment="Stretch" Background="#FF196176">
+                <TextBlock x:Name="Title" Text="Главное меню" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
             </Grid>
 
-            <!--<StackPanel Grid.Column="0" Grid.Row="1">
-                <TextBlock Text="logs:" Foreground="#FF727272" Padding="2"></TextBlock>
-                <TextBlock x:Name="log" Text="example" Foreground="#FF6F8DCD" Padding="2"></TextBlock>
-            </StackPanel>-->
-
-            <ScrollViewer Grid.Column="0" Grid.Row="2" Background="#FFF1F1F1" >
-                <Grid Background="White" >
-                    <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Grid Grid.Column="0" Grid.Row="2" Background="#FFF1F1F1" >
+                    <Grid x:Name="GridPrincipal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 </Grid>
-            </ScrollViewer>
-
-
         </Grid>
 
     </Grid>

@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="HorizontalList.PrintSettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:HorizontalList"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800"
+             Background="White">
+    <UserControl.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" HorizontalAlignment="Right" Margin="0 0 30 0" CornerRadius="25" Background="#FFA5A5A5" BorderThickness="1" Padding="2" Width="50" Height="50">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF4C95FF"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF0043A3"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="RoundedButtonStyleDelete" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 0 0 0" CornerRadius="25" Background="#FFD67676" BorderThickness="1" Padding="2" Width="50" Height="50">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers >
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFDA6060"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFFF3737"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="PrintButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" HorizontalAlignment="Center" Margin="0 70 0 0" 
+                                CornerRadius="10" Background="#FF4C95FF" 
+                                BorderThickness="1" Padding="10" Width="150" Height="60">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF196176"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF879BB7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </UserControl.Resources>
+
+
+
+    <Grid>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>-->
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Hidden" VerticalAlignment="Center"> 
+            <Grid  Width="300">
+                <Rectangle Width="Auto" Height="185" VerticalAlignment="Top" Margin="0, 20" RadiusY="10" RadiusX="10" Fill="White">
+                    <Rectangle.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+
+                <StackPanel VerticalAlignment="Top" Width="auto">
+
+                    <TextBlock Text="Номер участка для печати" 
+                           TextWrapping="WrapWithOverflow" 
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Top" 
+                           Margin="40" 
+                           Foreground="Gray" 
+                           FontSize="18"/>
+                    <TextBox x:Name="CardNumber" Width="250" 
+                             BorderThickness="0 0 0 2"  FontSize="18" TextAlignment="Center"
+                         KeyDown="OnKeyDownHandler"/>
+
+                    <TextBlock x:Name="ErrorMessage" Foreground="#FFB00000" FontSize="16" HorizontalAlignment="Center"
+                               Margin="0 10 0 0">
+                        
+                    </TextBlock>
+
+
+
+                    <Button  Margin="0 20" Click="ButtonAdd_Click" Style="{StaticResource RoundedButtonStyle}">
+                        <materialDesign:PackIcon Kind="Add" Width="30" Height="30" Foreground="White" />
+                    </Button>
+
+
+                    <Grid>
+                        <Rectangle Width="Auto" Height="100" VerticalAlignment="Top" Margin="0" RadiusY="10" RadiusX="10" Fill="White">
+                            <Rectangle.Effect>
+                                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+
+                        <TextBlock x:Name="PrintMessage" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30" FontSize="20" FontWeight="Bold"
+                                   Foreground="#FF5C5C5C">
+                            Печать: 0 листов
+                        </TextBlock>
+                        <Button Click="ButtonPrint_Click" Style="{StaticResource PrintButtonStyle}">
+                            <materialDesign:PackIcon Kind="Printer" Width="30" Height="30" Foreground="White" />
+                        </Button>
+
+                    </Grid>
+
+
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+
+
+
+        <Grid Grid.Column="1" Margin="20">
+            <Rectangle
+               Stroke="#FF196176"
+                RadiusX="10"
+                RadiusY="10"
+                Fill="Transparent"
+               />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+
+                <StackPanel Grid.Row="0" VerticalAlignment="Top"  Height="Auto">
+                    <TextBlock Foreground="#FF196176" HorizontalAlignment="Center" Padding="5" FontWeight="Bold" FontSize="20" >Список участков для печати</TextBlock>
+                    <StackPanel  VerticalAlignment="Top" Height="2" Background="#FF196176"/>
+                </StackPanel>
+
+                <Grid Grid.Row="1">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                        <WrapPanel x:Name="CardsContainer">
+                            <!--<Grid>
+                                <Rectangle Width="150" Height="100"  Margin="10 10" RadiusY="10" RadiusX="10" Fill="#FF9F9F9F" />
+                                <TextBlock Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" FontSize="30"> 12</TextBlock>
+                                <Button Style="{StaticResource RoundedButtonStyleDelete}">
+                                    <materialDesign:PackIcon Kind="DeleteEmpty" Width="30" Height="30" Foreground="White" />
+                                </Button>
+                            </Grid>-->
+                        </WrapPanel>
+                    </ScrollViewer>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

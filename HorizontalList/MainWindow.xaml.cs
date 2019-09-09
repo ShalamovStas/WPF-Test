@@ -22,11 +22,14 @@ namespace HorizontalList
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int MyProperty { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             GridPrincipal.Children.Clear();
             GridPrincipal.Children.Add(new StartControl());
+
+            App.Current.Properties["PrintCardsList"] = new[] { "11", "12"};
 
         }
 
@@ -42,20 +45,29 @@ namespace HorizontalList
             switch (index)
             {
                 case 0:
+                    Title.Text = "Главное меню";
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new StartControl());
                     break;
                 case 1:
+                    Title.Text = "Карточки участков";
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new CardsListcontrol());
                     break;
                 case 2:
+                    Title.Text = "Карта территории";
                     GridPrincipal.Children.Clear();
                     break;
                 case 3:
+                    Title.Text = "Печать участков";
                     GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new PrintSettingsControl());
                     break;
                 case 4:
+                    Title.Text = "Настройки";
+                    GridPrincipal.Children.Clear();
+                    break;
+                case 5:
                     Application.Current.Shutdown();
                     break;
                 default:
