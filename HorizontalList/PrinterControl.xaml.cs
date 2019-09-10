@@ -228,7 +228,7 @@ namespace HorizontalList
             Grid grid = new Grid();
             Rectangle rectangle0 = new Rectangle();
 
-            rectangle0.Stroke = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+            rectangle0.Stroke = new SolidColorBrush(Color.FromRgb(159, 159, 159));
             rectangle0.StrokeThickness = 1;
 
             grid.Children.Add(rectangle0);
