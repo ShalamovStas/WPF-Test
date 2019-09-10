@@ -44,23 +44,22 @@
         </Grid>
 
 
-        <ScrollViewer Grid.Row="1" VerticalAlignment="Center" VerticalScrollBarVisibility="Hidden">
+        <ScrollViewer Grid.Row="1" VerticalAlignment="Center" >
 
             <StackPanel x:Name="PrintListContainer">
                 <StackPanel Height="50"/>
 
-                <Grid Width="400">
+                <!--<Grid Width="400">
                     <Rectangle Height="200" VerticalAlignment="Top" Margin="10" RadiusY="10" RadiusX="10" Fill="White">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Image Width="200" Margin="0 35 0 0" VerticalAlignment="Top" Source="Assets/11.png">
-                    </Image>
+                    <Image Width="200" Margin="0 35 0 0" VerticalAlignment="Top" Source="Assets/11.png"/>
                     <Button Style="{StaticResource PrintButtonStyle}">
                         <materialDesign:PackIcon Kind="Printer" Width="30" Height="30" Foreground="White" />
                     </Button>
-                </Grid>
+                </Grid>-->
             </StackPanel>
 
         </ScrollViewer>
