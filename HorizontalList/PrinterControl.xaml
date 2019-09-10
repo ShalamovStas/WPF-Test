@@ -22,7 +22,53 @@
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#FF196176"/>
+                                <Setter Property="Background" TargetName="border" Value="#FF86DAA8"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF879BB7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="OpenImageButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 15 25" 
+                                CornerRadius="0" Background="White" 
+                                BorderThickness="0" Padding="0" Width="60" Height="30">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFE5E5E5"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PrintButtonStyleDone" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 190 0 0" 
+                                CornerRadius="10" Background="#FF61A84B" 
+                                BorderThickness="0" Padding="0" Width="80" Height="40">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF86DAA8"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" TargetName="border" Value="#FF879BB7"/>
@@ -50,16 +96,68 @@
                 <StackPanel Height="50"/>
 
                 <!--<Grid Width="400">
-                    <Rectangle Height="200" VerticalAlignment="Top" Margin="10" RadiusY="10" RadiusX="10" Fill="White">
+                    <Rectangle Height="200" VerticalAlignment="Top" Margin="10" RadiusY="0" RadiusX="0" Fill="White">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Image Width="200" Margin="0 35 0 0" VerticalAlignment="Top" Source="Assets/11.png"/>
+
+                    <Grid Width="200" Height="150" VerticalAlignment="Top" Margin="0 30 0 0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0">
+
+
+                            <Rectangle  Margin="2 2" RadiusY="5" RadiusX="5" Fill="#FF9F9F9F" />
+                            <TextBlock Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" FontSize="30"> 10</TextBlock>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Grid.Column="0">
+
+
+                            <Rectangle  Margin="2 2" RadiusY="5" RadiusX="5" Fill="#FF9F9F9F" />
+                            <TextBlock Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" FontSize="30"> 11</TextBlock>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Grid.Column="1">
+
+
+                            <Rectangle  Margin="2 2" RadiusY="5" RadiusX="5" Fill="#FF9F9F9F" />
+                            <TextBlock Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" FontSize="30"> 15</TextBlock>
+                        </Grid>
+
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Rectangle  Stroke="Black" StrokeThickness="1" />
+
+                            <Rectangle  Margin="2 2" RadiusY="5" RadiusX="5" Fill="#FF9F9F9F" />
+                            <TextBlock Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" FontSize="30"> 12</TextBlock>
+                        </Grid>
+
+                    </Grid>
                     <Button Style="{StaticResource PrintButtonStyle}">
                         <materialDesign:PackIcon Kind="Printer" Width="30" Height="30" Foreground="White" />
                     </Button>
+                    <Button Style="{StaticResource OpenImageButtonStyle}">
+                        <materialDesign:PackIcon Kind="FolderImage" Width="25" Height="25" Foreground="#FF888888" />
+                    </Button>
                 </Grid>-->
+
             </StackPanel>
 
         </ScrollViewer>

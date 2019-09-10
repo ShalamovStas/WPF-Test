@@ -16,6 +16,7 @@ namespace HorizontalList
 
         public static string[] assets = { "11.png", "12.png", "13.png", "14.png" };
         public static string tempFolder = Path.GetDirectoryName(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + @"\Documents\Cards\";
+        public static string tempFolderPrint = Path.GetDirectoryName(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + @"\Documents\Cards\Print\";
 
         public static List<string> PrintList { get; set; }
 
