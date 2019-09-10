@@ -20,9 +20,46 @@ namespace HorizontalList
     /// </summary>
     public partial class StartControl : UserControl
     {
-        public StartControl()
+        public delegate void SelectedHandler(int indexControl);
+
+
+        public SelectedHandler Handler { get; set; }
+
+        public StartControl(SelectedHandler Handler)
         {
             InitializeComponent();
+            this.Handler = Handler;
         }
+
+        private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           // Handler?.Invoke(sender, e);
+        }
+
+        private void Click(object sender, RoutedEventArgs e)
+        {
+            // Handler?.Invoke(sender, e);
+        }
+
+        private void Menu1_Click(object sender, MouseButtonEventArgs e)
+        {
+            Handler?.Invoke(1);
+        }
+
+        private void Menu2_Click(object sender, MouseButtonEventArgs e)
+        {
+            Handler?.Invoke(2);
+        }
+
+        private void Menu3_Click(object sender, MouseButtonEventArgs e)
+        {
+            Handler?.Invoke(3);
+        }
+
+        private void Menu4_Click(object sender, MouseButtonEventArgs e)
+        {
+            Handler?.Invoke(4);
+        }
+
     }
 }

@@ -27,9 +27,12 @@ namespace HorizontalList
         {
             InitializeComponent();
             GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new StartControl());
 
-            App.Current.Properties["PrintCardsList"] = new[] { "11", "12"};
+            StartControl startControl = new StartControl(ShowControl);
+            GridPrincipal.Children.Add(startControl);
+            //startControl.Handler = this.ListViewMenu_SelectionChanged;
+
+            App.Current.Properties["PrintCardsList"] = new[] { "11", "12" };
 
         }
 
@@ -41,13 +44,20 @@ namespace HorizontalList
 
             if (GridPrincipal == null)
                 return;
+            ShowControl(index);
 
-            switch (index)
+        }
+
+        public void ShowControl(int control)
+        {
+            switch (control)
             {
                 case 0:
                     Title.Text = "Главное меню";
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new StartControl());
+                    StartControl startControl = new StartControl(ShowControl);
+                    //startControl.Handler = this.ListViewMenu_SelectionChanged;
+                    GridPrincipal.Children.Add(startControl);
                     break;
                 case 1:
                     Title.Text = "Карточки участков";
@@ -57,6 +67,7 @@ namespace HorizontalList
                 case 2:
                     Title.Text = "Карта территории";
                     GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new MapControl());
                     break;
                 case 3:
                     Title.Text = "Печать участков";

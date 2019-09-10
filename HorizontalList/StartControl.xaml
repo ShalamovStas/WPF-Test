@@ -4,9 +4,94 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HorizontalList"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Wheat">
-        <TextBlock Margin="5 5" Text="Start" FontSize="20" HorizontalAlignment="Center"/>
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF15206A" Offset="0"/>
+                <GradientStop Color="#FF196176" Offset="1"/>
+                <GradientStop Color="#FF202F8D" Offset="0.245"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!--<Grid  Width="300">
+            <Rectangle Width="Auto" Height="185" VerticalAlignment="Top" Margin="0, 20" RadiusY="10" RadiusX="10" Fill="White">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+                </Rectangle.Effect>
+            </Rectangle>
+
+            <StackPanel VerticalAlignment="Top" Width="auto">
+
+                <TextBlock Text="Карточки" 
+                           TextWrapping="WrapWithOverflow" 
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Top" 
+                           Margin="40" 
+                           Foreground="Gray" 
+                           FontSize="18"/>
+
+
+
+            </StackPanel>
+        </Grid>-->
+
+
+
+        <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Main menu" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>-->
+
+        <!--<ListView.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </ListView.Background>-->
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" Width="200"  Height="200" MouseLeftButtonDown="Menu1_Click">
+                <Grid.Background>
+                    <SolidColorBrush Color="White" Opacity="0.1"/>
+                </Grid.Background>
+                <TextBlock Text="Cards" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                <materialDesign:PackIcon Height="60" Width="60" Kind="Image" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1" Width="200"  Height="200" MouseLeftButtonDown="Menu2_Click">
+                <Grid.Background>
+                    <SolidColorBrush Color="White" Opacity="0.1"/>
+                </Grid.Background>
+                <TextBlock Text="Map" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                <materialDesign:PackIcon Height="60" Width="60" Kind="Map" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" Width="200"  Height="200" MouseLeftButtonDown="Menu3_Click">
+                <Grid.Background>
+                    <SolidColorBrush Color="White" Opacity="0.1"/>
+                </Grid.Background>
+                <TextBlock Text="Print" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                <materialDesign:PackIcon Height="60" Width="60" Kind="Printer" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1" Width="200"  Height="200" MouseLeftButtonDown="Menu4_Click">
+                <Grid.Background>
+                    <SolidColorBrush Color="White" Opacity="0.1"/>
+                </Grid.Background>
+                <TextBlock Text="Out" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                <materialDesign:PackIcon Height="60" Width="60" Kind="ExitRun" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+            </Grid>
+        </Grid>
+
+        <!--</StackPanel>-->
     </Grid>
 </UserControl>

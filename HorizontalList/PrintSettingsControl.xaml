@@ -151,12 +151,12 @@
 
 
         <Grid Grid.Column="1" Margin="20">
-            <Rectangle
+            <!--<Rectangle
                Stroke="#FF196176"
                 RadiusX="10"
                 RadiusY="10"
                 Fill="Transparent"
-               />
+               />-->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -167,7 +167,7 @@
 
                 <StackPanel Grid.Row="0" VerticalAlignment="Top"  Height="Auto">
                     <TextBlock Foreground="#FF196176" HorizontalAlignment="Center" Padding="5" FontWeight="Bold" FontSize="20" >Список участков для печати</TextBlock>
-                    <StackPanel  VerticalAlignment="Top" Height="2" Background="#FF196176"/>
+                    <!--<StackPanel  VerticalAlignment="Top" Height="2" Background="#FF196176"/>-->
                 </StackPanel>
 
                 <Grid Grid.Row="1">

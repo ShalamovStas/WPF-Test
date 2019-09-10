@@ -90,7 +90,7 @@
         </Grid>
 
 
-        <ScrollViewer Grid.Row="1" VerticalAlignment="Center" >
+        <ScrollViewer Grid.Row="1" VerticalAlignment="Center" VerticalScrollBarVisibility="Hidden">
 
             <StackPanel x:Name="PrintListContainer">
                 <StackPanel Height="50"/>
