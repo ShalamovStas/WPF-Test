@@ -167,9 +167,9 @@ namespace HorizontalList
                 DoubleAnimation iconWidthAnimation = new DoubleAnimation();
                 iconWidthAnimation.From = 0;
                 iconWidthAnimation.To = 30;
-                iconWidthAnimation.Duration = TimeSpan.FromMilliseconds(300);
+                iconWidthAnimation.Duration = TimeSpan.FromMilliseconds(100);
 
-                DoubleAnimation iconHeightAnimation = new DoubleAnimation(0, 30, TimeSpan.FromMilliseconds(300));
+                DoubleAnimation iconHeightAnimation = new DoubleAnimation(0, 30, TimeSpan.FromMilliseconds(100));
 
                 iconHeightAnimation.Completed += delegate (Object c, EventArgs d)
                 {

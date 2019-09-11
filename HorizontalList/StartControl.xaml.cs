@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -21,14 +22,16 @@ namespace HorizontalList
     public partial class StartControl : UserControl
     {
         public delegate void SelectedHandler(int indexControl);
-
+        public delegate void AnimationDelegate();
 
         public SelectedHandler Handler { get; set; }
+        public AnimationDelegate AnimationItem { get; set; }
 
         public StartControl(SelectedHandler Handler)
         {
             InitializeComponent();
             this.Handler = Handler;
+            AnimationItem = AnimateItem;
         }
 
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,6 +47,7 @@ namespace HorizontalList
         private void Menu1_Click(object sender, MouseButtonEventArgs e)
         {
             Handler?.Invoke(1);
+           // AnimateItem();
         }
 
         private void Menu2_Click(object sender, MouseButtonEventArgs e)
@@ -58,7 +62,26 @@ namespace HorizontalList
 
         private void Menu4_Click(object sender, MouseButtonEventArgs e)
         {
-            Handler?.Invoke(4);
+            Handler?.Invoke(5);
+        }
+
+        public void AnimateItem()
+        {
+            ColorAnimation animation = new ColorAnimation();
+
+            DoubleAnimation opacityAnimation = new DoubleAnimation();
+            opacityAnimation.From = 0.0;
+            opacityAnimation.To = 0.1;
+            opacityAnimation.Duration = TimeSpan.FromSeconds(0.5);
+
+            SolidColorBrush brush_item1 = new SolidColorBrush();
+            brush_item1.Color = Colors.White;
+            brush_item1.Opacity = 0.1;
+            Item_1.Background = brush_item1;
+            Item_2.Background = brush_item1;
+            Item_3.Background = brush_item1;
+            Item_5.Background = brush_item1;
+            brush_item1.BeginAnimation(SolidColorBrush.OpacityProperty, opacityAnimation);
         }
 
     }

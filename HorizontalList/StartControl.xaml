@@ -41,57 +41,53 @@
         </Grid>-->
 
 
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Main menu" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
 
-        <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Main menu" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>-->
 
-        <!--<ListView.Background>
-                    <SolidColorBrush Color="White" Opacity="0"/>
-                </ListView.Background>-->
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column="0" Width="200"  Height="200" MouseLeftButtonDown="Menu1_Click">
-                <Grid.Background>
-                    <SolidColorBrush Color="White" Opacity="0.1"/>
-                </Grid.Background>
-                <TextBlock Text="Cards" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
-                <materialDesign:PackIcon Height="60" Width="60" Kind="Image" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                <Grid x:Name="Item_1" Grid.Row="0" Grid.Column="0" Width="200"  Height="200" MouseLeftButtonDown="Menu1_Click" Margin="5">
+                    <Grid.Background>   
+                        <SolidColorBrush Color="White" Opacity="0.1"/>
+                    </Grid.Background>
+                    <TextBlock Text="Cards" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="Image" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                </Grid>
+
+                <Grid x:Name="Item_2" Grid.Row="0" Grid.Column="1" Width="200"  Height="200" MouseLeftButtonDown="Menu2_Click" Margin="5">
+                    <Grid.Background>
+                        <SolidColorBrush Color="White" Opacity="0.1"/>
+                    </Grid.Background>
+                    <TextBlock Text="Map" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="Map" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                </Grid>
+
+                <Grid x:Name="Item_3" Grid.Row="1" Grid.Column="0" Width="200"  Height="200" MouseLeftButtonDown="Menu3_Click" Margin="5">
+                    <Grid.Background>
+                        <SolidColorBrush Color="White" Opacity="0.1"/>
+                    </Grid.Background>
+                    <TextBlock Text="Print" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="Printer" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                </Grid>
+
+                <Grid x:Name="Item_5" Grid.Row="1" Grid.Column="1" Width="200"  Height="200" MouseLeftButtonDown="Menu4_Click" Margin="5">
+                    <Grid.Background>
+                        <SolidColorBrush Color="White" Opacity="0.1"/>
+                    </Grid.Background>
+                    <TextBlock Text="Out" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="ExitRun" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
+                </Grid>
             </Grid>
-
-            <Grid Grid.Row="0" Grid.Column="1" Width="200"  Height="200" MouseLeftButtonDown="Menu2_Click">
-                <Grid.Background>
-                    <SolidColorBrush Color="White" Opacity="0.1"/>
-                </Grid.Background>
-                <TextBlock Text="Map" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
-                <materialDesign:PackIcon Height="60" Width="60" Kind="Map" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
-            </Grid>
-
-            <Grid Grid.Row="1" Grid.Column="0" Width="200"  Height="200" MouseLeftButtonDown="Menu3_Click">
-                <Grid.Background>
-                    <SolidColorBrush Color="White" Opacity="0.1"/>
-                </Grid.Background>
-                <TextBlock Text="Print" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
-                <materialDesign:PackIcon Height="60" Width="60" Kind="Printer" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
-            </Grid>
-
-            <Grid Grid.Row="1" Grid.Column="1" Width="200"  Height="200" MouseLeftButtonDown="Menu4_Click">
-                <Grid.Background>
-                    <SolidColorBrush Color="White" Opacity="0.1"/>
-                </Grid.Background>
-                <TextBlock Text="Out" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
-                <materialDesign:PackIcon Height="60" Width="60" Kind="ExitRun" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
-            </Grid>
-        </Grid>
-
-        <!--</StackPanel>-->
+        </StackPanel>
     </Grid>
 </UserControl>
