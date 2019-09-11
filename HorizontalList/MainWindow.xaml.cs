@@ -71,6 +71,7 @@ namespace HorizontalList
                     ListViewMenu.SelectedItem = Item_4;
                     Title.Text = "Настройки";
                     GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new SettingsControl());
                     break;
                 case 5:
                     ShowLeftPanel();
