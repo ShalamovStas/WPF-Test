@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,15 +27,13 @@ namespace HorizontalList
         public CardsListcontrol()
         {
             InitializeComponent();
-            var products = GetProducts();
+            var products = GetImages();
             if (products.Count > 0)
                 ListViewProducts.ItemsSource = products;
         }
 
-        private List<Card> GetProducts()
+        private List<Card> GetImages()
         {
-
-            List<string> fileNames = new List<string>();
             List<Card> cards = new List<Card>();
 
             for (int i = 0; i < GlobalVariables.assets.Length; i++)

@@ -6,3 +6,14 @@ C:\Users\shala\source\repos\WPF\HorizontalList-master\CutImage\obj\Debug\netcore
 C:\Users\shala\source\repos\WPF\HorizontalList-master\CutImage\obj\Debug\netcoreapp2.1\CutImage.csproj.CoreCompileInputs.cache
 C:\Users\shala\source\repos\WPF\HorizontalList-master\CutImage\obj\Debug\netcoreapp2.1\CutImage.AssemblyInfoInputs.cache
 C:\Users\shala\source\repos\WPF\HorizontalList-master\CutImage\obj\Debug\netcoreapp2.1\CutImage.AssemblyInfo.cs
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\bin\Debug\netcoreapp2.1\CutImage.deps.json
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\bin\Debug\netcoreapp2.1\CutImage.runtimeconfig.json
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\bin\Debug\netcoreapp2.1\CutImage.runtimeconfig.dev.json
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\bin\Debug\netcoreapp2.1\CutImage.dll
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\bin\Debug\netcoreapp2.1\CutImage.pdb
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.csprojAssemblyReference.cache
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.csproj.CoreCompileInputs.cache
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.AssemblyInfoInputs.cache
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.AssemblyInfo.cs
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.dll
+C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.pdb

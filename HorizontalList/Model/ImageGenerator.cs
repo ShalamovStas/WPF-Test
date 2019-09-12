@@ -13,24 +13,40 @@ namespace HorizontalList
 {
     class ImageGenerator
     {
-        private int cutSize = 7;
+        private int cutSize = 0;
         public List<string> GenerateImages(List<A4_Paper> paperList)
         {
+            CreateOutputDirectory();
+            RemoveFilesFromOutputFolder();
+
             List<string> pathFiles = new List<string>();
 
             foreach (var paper in paperList)
             {
-                var bitmapResultPath = JoinImages(paper);
+                var bitmapResultPath = JoinBitmaps(paper);
                 pathFiles.Add(bitmapResultPath);
             }
             return pathFiles;
         }
 
-        private string JoinImages(A4_Paper paper)
+        private void CreateOutputDirectory()
+        {
+            if (!Directory.Exists(GlobalVariables.tempFolderPrint))
+                Directory.CreateDirectory(GlobalVariables.tempFolderPrint);
+        }
+
+        private void RemoveFilesFromOutputFolder()
+        {
+            var files = Directory.GetFiles(GlobalVariables.tempFolderPrint);
+            foreach (var file in files)
+                File.Delete(file);
+        }
+
+        private string JoinBitmaps(A4_Paper paper)
         {
             //var fileName = GenerateFileName(paper.Cards);
             var fullPathfile = GlobalVariables.tempFolderPrint + paper.PaperName;
-            var result = new Bitmap(3532, 2497);
+            var result = new Bitmap(3522, 2376);
             List<string> imgNames = new List<string>(4);
             List<Bitmap> bitmapList = new List<Bitmap>(4);
 
@@ -38,7 +54,7 @@ namespace HorizontalList
             {
                 if (paper.Cards[i] == null)
                     break;
-                imgNames.Add(paper.Cards[0].Image);
+                imgNames.Add(paper.Cards[i].Image);
             }
 
             foreach (var imgName in imgNames)
@@ -89,8 +105,7 @@ namespace HorizontalList
                     }
                 }
 
-                if (!Directory.Exists(GlobalVariables.tempFolderPrint))
-                    Directory.CreateDirectory(GlobalVariables.tempFolderPrint);
+
 
                 result.Save(fullPathfile, ImageFormat.Png);
                 g.Flush();

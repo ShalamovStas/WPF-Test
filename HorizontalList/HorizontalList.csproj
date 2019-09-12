@@ -191,7 +191,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\print.png" />
+    <Resource Include="Assets\15.png" />
+    <Resource Include="Assets\16.png" />
+    <Resource Include="Assets\17.png" />
+    <Resource Include="Assets\18.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,67 +9,50 @@ namespace CutImage
     class Program
     {
         static int cutSize = 7;
+        static string ImageFolder = "../../../Images";
+        static string ImageFolderOut = "../../../ImagesOut/";
 
         static void Main(string[] args)
         {
-            List<string> names = GenerateFileNames();
+            if (!Directory.Exists(ImageFolder))
+                Directory.CreateDirectory(ImageFolder);
 
-            CutImages(names);
+            if (!Directory.Exists(ImageFolderOut))
+                Directory.CreateDirectory(ImageFolderOut);
+
+            string[] files = Directory.GetFiles(ImageFolder, "*.png");
+            CutImages(files);
         }
 
-        private static void CutImages(List<string> names)
+        private static void CutImages(string[] files)
         {
-            if (!Directory.Exists("D:/Out/"))
-                Directory.CreateDirectory("D:/Out/");
+
 
             var nameFile = 11;
-            foreach (var item in names)
+            foreach (var item in files)
             {
-                var img = Image.FromFile(@"D:/Wotchtower/Участки/" + item);
-                var result = new Bitmap(1763, 1190);
+                var img = Image.FromFile(item);
+                var result = new Bitmap(1761, 1188);
 
                 using (Graphics g = Graphics.FromImage(result))
                 {
-                    g.DrawImage(img, new Rectangle(0, 0, img.Width, img.Height));
-                    result.Save("D:/Out/" + nameFile + ".png", ImageFormat.Png);
+                    g.DrawImage(img, new Rectangle(-3, -3, img.Width, img.Height));
+                    result.Save(ImageFolderOut + nameFile + ".png", ImageFormat.Png);
                     nameFile++;
 
-                    g.DrawImage(img, new Rectangle(-1758, 0, img.Width, img.Height));
-                    result.Save("D:/Out/" + nameFile + ".png", ImageFormat.Png);
+                    g.DrawImage(img, new Rectangle(-1757, -3, img.Width, img.Height));
+                    result.Save(ImageFolderOut + nameFile + ".png", ImageFormat.Png);
                     nameFile++;
 
-                    g.DrawImage(img, new Rectangle(-3, -1185, img.Width, img.Height));
-                    result.Save("D:/Out/" + nameFile + ".png", ImageFormat.Png);
+                    g.DrawImage(img, new Rectangle(-3, -1184, img.Width, img.Height));
+                    result.Save(ImageFolderOut + nameFile + ".png", ImageFormat.Png);
                     nameFile++;
 
-                    g.DrawImage(img, new Rectangle(-1758, -1185, img.Width, img.Height));
-                    result.Save("D:/Out/" + nameFile + ".png", ImageFormat.Png);
+                    g.DrawImage(img, new Rectangle(-1757, -1184, img.Width, img.Height));
+                    result.Save(ImageFolderOut + nameFile + ".png", ImageFormat.Png);
                     nameFile++;
                 }
             }
-        }
-
-        private static List<string> GenerateFileNames()
-        {
-            int firstNumberName = 11;
-            int SecondNumberName = 14;
-            List<string> names = new List<string>();
-
-            for (int i = 0; i < 60; i++)
-            {
-                //Console.WriteLine(firstNumberName + "-" + SecondNumberName + ".png");
-                names.Add(firstNumberName + "-" + SecondNumberName + ".png");
-                firstNumberName += 4;
-                SecondNumberName += 4;
-                if (firstNumberName == 243)
-                {
-                    SecondNumberName = 245;
-                    Console.WriteLine(firstNumberName + "-" + SecondNumberName + ".png");
-                    names.Add(firstNumberName + "-" + SecondNumberName + ".png");
-                    break;
-                }
-            }
-            return names;
         }
     }
 }
