@@ -783,23 +783,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\stanislav.shalamov\\.nuget\\packages\\": {},
+    "C:\\Users\\shala\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stanislav.shalamov\\source\\repos\\ShalamovStas\\WPF-Test\\CutImage\\CutImage.csproj",
+      "projectUniqueName": "C:\\Users\\shala\\source\\repos\\WPF\\HorizontalList-master\\CutImage\\CutImage.csproj",
       "projectName": "CutImage",
-      "projectPath": "C:\\Users\\stanislav.shalamov\\source\\repos\\ShalamovStas\\WPF-Test\\CutImage\\CutImage.csproj",
-      "packagesPath": "C:\\Users\\stanislav.shalamov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stanislav.shalamov\\source\\repos\\ShalamovStas\\WPF-Test\\CutImage\\obj\\",
+      "projectPath": "C:\\Users\\shala\\source\\repos\\WPF\\HorizontalList-master\\CutImage\\CutImage.csproj",
+      "packagesPath": "C:\\Users\\shala\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\shala\\source\\repos\\WPF\\HorizontalList-master\\CutImage\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\stanislav.shalamov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\shala\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

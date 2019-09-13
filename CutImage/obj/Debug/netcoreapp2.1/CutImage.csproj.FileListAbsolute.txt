@@ -17,3 +17,6 @@ C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debu
 C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.AssemblyInfo.cs
 C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.dll
 C:\Users\stanislav.shalamov\source\repos\ShalamovStas\WPF-Test\CutImage\obj\Debug\netcoreapp2.1\CutImage.pdb
+C:\Users\shala\source\repos\WPF\HorizontalList-master\CutImage\bin\Debug\netcoreapp2.1\CutImage.pdb
+C:\Users\shala\source\repos\WPF\HorizontalList-master\CutImage\obj\Debug\netcoreapp2.1\CutImage.dll
+C:\Users\shala\source\repos\WPF\HorizontalList-master\CutImage\obj\Debug\netcoreapp2.1\CutImage.pdb

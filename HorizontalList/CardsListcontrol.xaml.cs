@@ -35,13 +35,17 @@ namespace HorizontalList
         private List<Card> GetImages()
         {
             List<Card> cards = new List<Card>();
-
+            bool needSaveCardsToTempDir = false;
             for (int i = 0; i < GlobalVariables.assets.Length; i++)
             {
-                cards.Add(new Card(ParseFileName(GlobalVariables.assets[i]), "Assets/" + GlobalVariables.assets[i]));
+                //cards.Add(new Card(ParseFileName(GlobalVariables.assets[i]), "Assets/" + GlobalVariables.assets[i]));
+
+                if (!File.Exists(GlobalVariables.tempFolder + GlobalVariables.assets[i]))
+                    needSaveCardsToTempDir = true;
             }
 
-            SaveCardsToDir();
+            if (needSaveCardsToTempDir)
+                SaveCardsToTempDir();
             return cards;
         }
 
@@ -64,12 +68,12 @@ namespace HorizontalList
             objProcess.Start();
         }
 
-        private void SaveCardsToDir()
+        private void SaveCardsToTempDir()
         {
 
             if (!Directory.Exists(GlobalVariables.tempFolder))
                 Directory.CreateDirectory(GlobalVariables.tempFolder);
-            
+
             foreach (var name in GlobalVariables.assets)
             {
                 if (!File.Exists(GlobalVariables.tempFolder + name))
@@ -78,7 +82,7 @@ namespace HorizontalList
 
                     using (var stream = Application.GetResourceStream(new Uri("Assets/" + name, UriKind.Relative)).Stream)
                     {
-                        stream.CopyTo(new FileStream(GlobalVariables.tempFolder + name, FileMode.Create));
+                        stream.CopyToAsync(new FileStream(GlobalVariables.tempFolder + name, FileMode.Create));
                     }
                 }
             }
