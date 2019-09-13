@@ -4,13 +4,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HorizontalList"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="White" >
+    <UserControl.Resources>
+
+        <Style x:Key="RoundedButtonStyleDelete" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 0 0 0" CornerRadius="25" Background="#FFD67676" BorderThickness="1" Padding="2" Width="50" Height="50">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers >
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFDA6060"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFFF3737"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </UserControl.Resources>
     <ScrollViewer>
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel Margin="10 0">
-                <ItemsControl x:Name="ListViewProducts" ItemsSource="{Binding Product}">
+
+            <StackPanel Margin="50">
+            <WrapPanel x:Name="Container" >
+
+                <!--<ItemsControl x:Name="ListViewProducts">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border Margin="1" Width="320" Height="260">
@@ -49,7 +78,24 @@
                             <WrapPanel/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                </ItemsControl>
+                </ItemsControl>-->
+
+                    <Grid>
+                        <Rectangle Width="150" Height="100"  Margin="10 10"  Fill="#FFB8B8B8" />
+                        <Rectangle Width="150" Height="22"  Margin="10 10"  Fill="#FF6C6C6C"  VerticalAlignment="Top"/>
+                        <TextBlock Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Top" FontSize="15"
+                                   Margin="12"> КАРТА УЧАСТКА</TextBlock>
+                        <TextBlock Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Top" Margin="0 45 0 0" FontSize="35" FontWeight="Bold"> 12</TextBlock>
+                        <!--<Button Style="{StaticResource RoundedButtonStyleDelete}">
+                            <materialDesign:PackIcon Kind="DeleteEmpty" Width="30" Height="30" Foreground="White" />
+                        </Button>-->
+                    </Grid>
+
+                </WrapPanel>
             </StackPanel>
         </Grid>
     </ScrollViewer>
