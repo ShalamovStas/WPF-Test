@@ -98,6 +98,12 @@ namespace HorizontalList
             }
         }
 
+        private void googleMap_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.google.com.ua/maps/@49.9933319,36.3352156,15.08z?hl=ru");
+        }
+            
+
         private void ZoomIn()
         {
             Image.Height += 100;

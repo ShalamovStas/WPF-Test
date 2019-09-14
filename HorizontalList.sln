@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorizontalList", "HorizontalList\HorizontalList.csproj", "{73B24481-D5BB-480E-8390-180E50BC7DE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDistrictCards", "HorizontalList\PrintDistrictCards.csproj", "{73B24481-D5BB-480E-8390-180E50BC7DE4}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{6A9B1012-5AAA-4DB8-BE82-96DCC360CC72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CutImage", "CutImage\CutImage.csproj", "{8F84F3EC-DD9C-4352-A273-A665D0C75B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CutImage", "CutImage\CutImage.csproj", "{8F84F3EC-DD9C-4352-A273-A665D0C75B9D}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupPrinterForDistricts", "SetupPrinterForDistricts\SetupPrinterForDistricts.vdproj", "{75DF89C3-1F4D-452E-8772-F603A628138C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +19,12 @@ Global
 		{73B24481-D5BB-480E-8390-180E50BC7DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73B24481-D5BB-480E-8390-180E50BC7DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73B24481-D5BB-480E-8390-180E50BC7DE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A9B1012-5AAA-4DB8-BE82-96DCC360CC72}.Debug|Any CPU.ActiveCfg = Debug
-		{6A9B1012-5AAA-4DB8-BE82-96DCC360CC72}.Release|Any CPU.ActiveCfg = Release
 		{8F84F3EC-DD9C-4352-A273-A665D0C75B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F84F3EC-DD9C-4352-A273-A665D0C75B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F84F3EC-DD9C-4352-A273-A665D0C75B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F84F3EC-DD9C-4352-A273-A665D0C75B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75DF89C3-1F4D-452E-8772-F603A628138C}.Debug|Any CPU.ActiveCfg = Debug
+		{75DF89C3-1F4D-452E-8772-F603A628138C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

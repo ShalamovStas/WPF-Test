@@ -42,7 +42,7 @@
 
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Main menu" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
+            <!--<TextBlock Text="Main menu" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>-->
 
 
 
@@ -60,7 +60,7 @@
                     <Grid.Background>   
                         <SolidColorBrush Color="White" Opacity="0.1"/>
                     </Grid.Background>
-                    <TextBlock Text="Cards" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <TextBlock Text="Карточки участков" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
                     <materialDesign:PackIcon Height="60" Width="60" Kind="Image" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
 
@@ -68,7 +68,7 @@
                     <Grid.Background>
                         <SolidColorBrush Color="White" Opacity="0.1"/>
                     </Grid.Background>
-                    <TextBlock Text="Map" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <TextBlock Text="Карта территории" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
                     <materialDesign:PackIcon Height="60" Width="60" Kind="Map" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
 
@@ -76,7 +76,7 @@
                     <Grid.Background>
                         <SolidColorBrush Color="White" Opacity="0.1"/>
                     </Grid.Background>
-                    <TextBlock Text="Print" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <TextBlock Text="Печать" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
                     <materialDesign:PackIcon Height="60" Width="60" Kind="Printer" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
 
@@ -84,7 +84,7 @@
                     <Grid.Background>
                         <SolidColorBrush Color="White" Opacity="0.1"/>
                     </Grid.Background>
-                    <TextBlock Text="Out" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
+                    <TextBlock Text="Выход" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" FontSize="18" Foreground="White" />
                     <materialDesign:PackIcon Height="60" Width="60" Kind="ExitRun" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 0 0 0" Foreground="White" />
                 </Grid>
             </Grid>

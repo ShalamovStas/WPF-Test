@@ -1,19 +1,41 @@
-﻿using System.Windows;
+﻿using System;
+using System.IO;
+using System.Threading;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace HorizontalList
 {
 
     public partial class MainWindow : Window
     {
+        delegate void UpdateProgressBar(string progress);
+
+        private UpdateProgressBar updateProgressBar;
         public MainWindow()
         {
             InitializeComponent();
             GridPrincipal.Children.Clear();
 
-            StartControl startControl = new StartControl(ShowControl);
-            GridPrincipal.Children.Add(startControl);
             HideLeftPanel();
+            LoadingControl loadingControl = new LoadingControl();
+            GridPrincipal.Children.Add(loadingControl);
+            updateProgressBar = loadingControl.UpdateProgress;
+
+            new Thread(() =>
+           {
+               SaveCardsToTempDir();
+               Dispatcher.Invoke(() =>
+               {
+                   GridPrincipal.Children.Clear();
+                   StartControl startControl = new StartControl(ShowControl);
+                   GridPrincipal.Children.Add(startControl);
+               });
+
+           }).Start();
         }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -99,6 +121,40 @@ namespace HorizontalList
         {
             MainColumn1.Width = new GridLength(400);
             MainColumn2.Width = new GridLength(5);
+        }
+
+        private void SaveCardsToTempDir()
+        {
+            int count = 1;
+            if (!Directory.Exists(GlobalVariables.tempFolder))
+                Directory.CreateDirectory(GlobalVariables.tempFolder);
+
+            foreach (var name in GlobalVariables.assets)
+            {
+                //Thread.Sleep(30);
+                Dispatcher.Invoke(() =>
+                {
+                    updateProgressBar("Загрузка " + count.ToString() + " из " + GlobalVariables.assets.Length);
+                });
+                count++;
+
+                if (!File.Exists(GlobalVariables.tempFolder + name))
+                {
+                    var bitmap = new BitmapImage(new Uri("Assets/" + name, UriKind.Relative));
+
+                    using (var stream = Application.GetResourceStream(new Uri("Assets/" + name, UriKind.Relative)).Stream)
+                    {
+                        using (var filestream = new FileStream(GlobalVariables.tempFolder + name, FileMode.Create))
+                        {
+                            stream.CopyTo(filestream);
+                            filestream.Flush();
+                            filestream.Close();
+                        }
+                        stream.Flush();
+                        stream.Close();
+                    }
+                }
+            }
         }
     }
 }

@@ -11,7 +11,7 @@
     <Grid>
         <ScrollViewer x:Name="Scroll" HorizontalScrollBarVisibility="Visible" MouseMove="OnMouseMove">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Image x:Name="Image"  Source="Assets/11.png"  Height="300" Width="300" MouseDown="Map_MouseDown" MouseWheel="Window_MouseWheel" ></Image>
+                <Image x:Name="Image"  Source="Assets/map.png"  Height="300" Width="300" MouseDown="Map_MouseDown" MouseWheel="Window_MouseWheel" ></Image>
             </Grid>
         </ScrollViewer>
 
@@ -55,6 +55,22 @@
                 Cursor="Hand"
                 Click="ZoomOutBtn_Click">
                 <materialDesign:PackIcon Kind="ZoomOut" Width="30" Height="30" Foreground="White" />
+            </Button>
+
+            <Button
+                x:Name="googleMap"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
+                Width="40" Height="40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,300,0,0"
+                ToolTip="Zoom out"
+                ToolTipService.InitialShowDelay="1000"
+                ToolTipService.ShowDuration="2500"
+                ToolTipService.BetweenShowDelay="0"
+                Cursor="Hand"
+                Click="googleMap_Click">
+                <materialDesign:PackIcon Kind="GoogleMaps" Width="30" Height="30" Foreground="White" />
             </Button>
         </Grid>
     </Grid>

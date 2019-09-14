@@ -9,6 +9,7 @@
         Height="600" Width="1080"
         FontFamily="The Medic Demo"
         WindowStartupLocation="CenterScreen"
+        Title="Печать"
         >
     <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
@@ -43,8 +44,8 @@
                 </Rectangle>
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="..." TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="40" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
-                    <TextBlock Text="Участки" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>
+                    <!--<TextBlock Text="Салтовский парк" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="40" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>-->
+                    <!--<TextBlock Text="Участки" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10" FontSize="20" TextAlignment="Center" Foreground="White" FontWeight="Medium"/>-->
 
                     <ListView BorderThickness="0" x:Name="ListViewMenu" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="0" Background="{x:Null}" >
                         <ListViewItem x:Name="Item_0">

@@ -124,22 +124,22 @@ namespace HorizontalList
         }
 
 
-        private List<Card> GetImages()
-        {
-            List<Card> cards = new List<Card>();
-            bool needSaveCardsToTempDir = false;
-            for (int i = 0; i < GlobalVariables.assets.Length; i++)
-            {
-                cards.Add(new Card(ParseFileName(GlobalVariables.assets[i]), "Assets/" + GlobalVariables.assets[i]));
-
-                if (!File.Exists(GlobalVariables.tempFolder + GlobalVariables.assets[i]))
-                    needSaveCardsToTempDir = true;
-            }
-            Thread.Sleep(1000);
-            if (needSaveCardsToTempDir)
-                SaveCardsToTempDir();
-            return cards;
-        }
+     // private List<Card> GetImages()
+     // {
+     //     List<Card> cards = new List<Card>();
+     //     bool needSaveCardsToTempDir = false;
+     //     for (int i = 0; i < GlobalVariables.assets.Length; i++)
+     //     {
+     //         cards.Add(new Card(ParseFileName(GlobalVariables.assets[i]), "Assets/" + GlobalVariables.assets[i]));
+     //
+     //         if (!File.Exists(GlobalVariables.tempFolder + GlobalVariables.assets[i]))
+     //             needSaveCardsToTempDir = true;
+     //     }
+     //     Thread.Sleep(1000);
+     //     if (needSaveCardsToTempDir)
+     //         SaveCardsToTempDir();
+     //     return cards;
+     // }
 
 
         private string ParseFileName(string fileName)
@@ -160,24 +160,6 @@ namespace HorizontalList
             objProcess.Start();
         }
 
-        private void SaveCardsToTempDir()
-        {
 
-            if (!Directory.Exists(GlobalVariables.tempFolder))
-                Directory.CreateDirectory(GlobalVariables.tempFolder);
-
-            foreach (var name in GlobalVariables.assets)
-            {
-                if (!File.Exists(GlobalVariables.tempFolder + name))
-                {
-                    var bitmap = new BitmapImage(new Uri("Assets/" + name, UriKind.Relative));
-
-                    using (var stream = Application.GetResourceStream(new Uri("Assets/" + name, UriKind.Relative)).Stream)
-                    {
-                        stream.CopyToAsync(new FileStream(GlobalVariables.tempFolder + name, FileMode.Create));
-                    }
-                }
-            }
-        }
     }
 }

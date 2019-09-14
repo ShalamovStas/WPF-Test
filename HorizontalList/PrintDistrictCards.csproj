@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73B24481-D5BB-480E-8390-180E50BC7DE4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HorizontalList</RootNamespace>
+    <AssemblyName>PrintDistrictCards</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>printer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="LoadingControl.xaml.cs">
+      <DependentUpon>LoadingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GlobalVariables.cs" />
+    <Compile Include="Model\ImageGenerator.cs" />
+    <Compile Include="MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSettingsControl.xaml.cs">
+      <DependentUpon>PrintSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrinterControl.xaml.cs">
+      <DependentUpon>PrinterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrinterWindow.xaml.cs">
+      <DependentUpon>PrinterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsControl.xaml.cs">
+      <DependentUpon>SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartControl.xaml.cs">
+      <DependentUpon>StartControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CardsListcontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CardsListcontrol.xaml.cs">
+      <DependentUpon>CardsListcontrol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrintSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrinterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrinterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Card.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\100.png" />
+    <Resource Include="Assets\101.png" />
+    <Resource Include="Assets\102.png" />
+    <Resource Include="Assets\103.png" />
+    <Resource Include="Assets\104.png" />
+    <Resource Include="Assets\105.png" />
+    <Resource Include="Assets\106.png" />
+    <Resource Include="Assets\107.png" />
+    <Resource Include="Assets\108.png" />
+    <Resource Include="Assets\109.png" />
+    <Resource Include="Assets\110.png" />
+    <Resource Include="Assets\111.png" />
+    <Resource Include="Assets\112.png" />
+    <Resource Include="Assets\113.png" />
+    <Resource Include="Assets\114.png" />
+    <Resource Include="Assets\115.png" />
+    <Resource Include="Assets\116.png" />
+    <Resource Include="Assets\117.png" />
+    <Resource Include="Assets\118.png" />
+    <Resource Include="Assets\119.png" />
+    <Resource Include="Assets\120.png" />
+    <Resource Include="Assets\121.png" />
+    <Resource Include="Assets\122.png" />
+    <Resource Include="Assets\123.png" />
+    <Resource Include="Assets\124.png" />
+    <Resource Include="Assets\125.png" />
+    <Resource Include="Assets\126.png" />
+    <Resource Include="Assets\127.png" />
+    <Resource Include="Assets\128.png" />
+    <Resource Include="Assets\129.png" />
+    <Resource Include="Assets\130.png" />
+    <Resource Include="Assets\131.png" />
+    <Resource Include="Assets\132.png" />
+    <Resource Include="Assets\133.png" />
+    <Resource Include="Assets\134.png" />
+    <Resource Include="Assets\135.png" />
+    <Resource Include="Assets\136.png" />
+    <Resource Include="Assets\137.png" />
+    <Resource Include="Assets\138.png" />
+    <Resource Include="Assets\139.png" />
+    <Resource Include="Assets\140.png" />
+    <Resource Include="Assets\141.png" />
+    <Resource Include="Assets\142.png" />
+    <Resource Include="Assets\143.png" />
+    <Resource Include="Assets\144.png" />
+    <Resource Include="Assets\145.png" />
+    <Resource Include="Assets\146.png" />
+    <Resource Include="Assets\147.png" />
+    <Resource Include="Assets\148.png" />
+    <Resource Include="Assets\149.png" />
+    <Resource Include="Assets\150.png" />
+    <Resource Include="Assets\151.png" />
+    <Resource Include="Assets\152.png" />
+    <Resource Include="Assets\153.png" />
+    <Resource Include="Assets\154.png" />
+    <Resource Include="Assets\155.png" />
+    <Resource Include="Assets\156.png" />
+    <Resource Include="Assets\157.png" />
+    <Resource Include="Assets\158.png" />
+    <Resource Include="Assets\159.png" />
+    <Resource Include="Assets\160.png" />
+    <Resource Include="Assets\161.png" />
+    <Resource Include="Assets\162.png" />
+    <Resource Include="Assets\163.png" />
+    <Resource Include="Assets\164.png" />
+    <Resource Include="Assets\165.png" />
+    <Resource Include="Assets\166.png" />
+    <Resource Include="Assets\167.png" />
+    <Resource Include="Assets\168.png" />
+    <Resource Include="Assets\169.png" />
+    <Resource Include="Assets\170.png" />
+    <Resource Include="Assets\171.png" />
+    <Resource Include="Assets\172.png" />
+    <Resource Include="Assets\173.png" />
+    <Resource Include="Assets\174.png" />
+    <Resource Include="Assets\175.png" />
+    <Resource Include="Assets\176.png" />
+    <Resource Include="Assets\177.png" />
+    <Resource Include="Assets\178.png" />
+    <Resource Include="Assets\179.png" />
+    <Resource Include="Assets\180.png" />
+    <Resource Include="Assets\181.png" />
+    <Resource Include="Assets\182.png" />
+    <Resource Include="Assets\183.png" />
+    <Resource Include="Assets\184.png" />
+    <Resource Include="Assets\185.png" />
+    <Resource Include="Assets\186.png" />
+    <Resource Include="Assets\187.png" />
+    <Resource Include="Assets\188.png" />
+    <Resource Include="Assets\189.png" />
+    <Resource Include="Assets\190.png" />
+    <Resource Include="Assets\191.png" />
+    <Resource Include="Assets\192.png" />
+    <Resource Include="Assets\193.png" />
+    <Resource Include="Assets\194.png" />
+    <Resource Include="Assets\195.png" />
+    <Resource Include="Assets\196.png" />
+    <Resource Include="Assets\197.png" />
+    <Resource Include="Assets\198.png" />
+    <Resource Include="Assets\199.png" />
+    <Resource Include="Assets\200.png" />
+    <Resource Include="Assets\201.png" />
+    <Resource Include="Assets\202.png" />
+    <Resource Include="Assets\203.png" />
+    <Resource Include="Assets\204.png" />
+    <Resource Include="Assets\205.png" />
+    <Resource Include="Assets\206.png" />
+    <Resource Include="Assets\207.png" />
+    <Resource Include="Assets\208.png" />
+    <Resource Include="Assets\209.png" />
+    <Resource Include="Assets\21.png" />
+    <Resource Include="Assets\210.png" />
+    <Resource Include="Assets\211.png" />
+    <Resource Include="Assets\212.png" />
+    <Resource Include="Assets\213.png" />
+    <Resource Include="Assets\214.png" />
+    <Resource Include="Assets\215.png" />
+    <Resource Include="Assets\216.png" />
+    <Resource Include="Assets\217.png" />
+    <Resource Include="Assets\218.png" />
+    <Resource Include="Assets\219.png" />
+    <Resource Include="Assets\22.png" />
+    <Resource Include="Assets\220.png" />
+    <Resource Include="Assets\221.png" />
+    <Resource Include="Assets\222.png" />
+    <Resource Include="Assets\223.png" />
+    <Resource Include="Assets\224.png" />
+    <Resource Include="Assets\225.png" />
+    <Resource Include="Assets\226.png" />
+    <Resource Include="Assets\227.png" />
+    <Resource Include="Assets\228.png" />
+    <Resource Include="Assets\229.png" />
+    <Resource Include="Assets\23.png" />
+    <Resource Include="Assets\230.png" />
+    <Resource Include="Assets\231.png" />
+    <Resource Include="Assets\232.png" />
+    <Resource Include="Assets\233.png" />
+    <Resource Include="Assets\234.png" />
+    <Resource Include="Assets\235.png" />
+    <Resource Include="Assets\236.png" />
+    <Resource Include="Assets\237.png" />
+    <Resource Include="Assets\238.png" />
+    <Resource Include="Assets\239.png" />
+    <Resource Include="Assets\24.png" />
+    <Resource Include="Assets\240.png" />
+    <Resource Include="Assets\241.png" />
+    <Resource Include="Assets\242.png" />
+    <Resource Include="Assets\243.png" />
+    <Resource Include="Assets\244.png" />
+    <Resource Include="Assets\245.png" />
+    <Resource Include="Assets\25.png" />
+    <Resource Include="Assets\26.png" />
+    <Resource Include="Assets\27.png" />
+    <Resource Include="Assets\28.png" />
+    <Resource Include="Assets\29.png" />
+    <Resource Include="Assets\30.png" />
+    <Resource Include="Assets\31.png" />
+    <Resource Include="Assets\32.png" />
+    <Resource Include="Assets\33.png" />
+    <Resource Include="Assets\34.png" />
+    <Resource Include="Assets\35.png" />
+    <Resource Include="Assets\36.png" />
+    <Resource Include="Assets\37.png" />
+    <Resource Include="Assets\38.png" />
+    <Resource Include="Assets\39.png" />
+    <Resource Include="Assets\40.png" />
+    <Resource Include="Assets\41.png" />
+    <Resource Include="Assets\42.png" />
+    <Resource Include="Assets\43.png" />
+    <Resource Include="Assets\44.png" />
+    <Resource Include="Assets\45.png" />
+    <Resource Include="Assets\46.png" />
+    <Resource Include="Assets\47.png" />
+    <Resource Include="Assets\48.png" />
+    <Resource Include="Assets\49.png" />
+    <Resource Include="Assets\50.png" />
+    <Resource Include="Assets\51.png" />
+    <Resource Include="Assets\52.png" />
+    <Resource Include="Assets\53.png" />
+    <Resource Include="Assets\54.png" />
+    <Resource Include="Assets\55.png" />
+    <Resource Include="Assets\56.png" />
+    <Resource Include="Assets\57.png" />
+    <Resource Include="Assets\58.png" />
+    <Resource Include="Assets\59.png" />
+    <Resource Include="Assets\60.png" />
+    <Resource Include="Assets\61.png" />
+    <Resource Include="Assets\62.png" />
+    <Resource Include="Assets\63.png" />
+    <Resource Include="Assets\64.png" />
+    <Resource Include="Assets\65.png" />
+    <Resource Include="Assets\66.png" />
+    <Resource Include="Assets\67.png" />
+    <Resource Include="Assets\68.png" />
+    <Resource Include="Assets\69.png" />
+    <Resource Include="Assets\70.png" />
+    <Resource Include="Assets\71.png" />
+    <Resource Include="Assets\72.png" />
+    <Resource Include="Assets\73.png" />
+    <Resource Include="Assets\74.png" />
+    <Resource Include="Assets\75.png" />
+    <Resource Include="Assets\76.png" />
+    <Resource Include="Assets\77.png" />
+    <Resource Include="Assets\78.png" />
+    <Resource Include="Assets\79.png" />
+    <Resource Include="Assets\80.png" />
+    <Resource Include="Assets\81.png" />
+    <Resource Include="Assets\82.png" />
+    <Resource Include="Assets\83.png" />
+    <Resource Include="Assets\84.png" />
+    <Resource Include="Assets\85.png" />
+    <Resource Include="Assets\86.png" />
+    <Resource Include="Assets\87.png" />
+    <Resource Include="Assets\88.png" />
+    <Resource Include="Assets\89.png" />
+    <Resource Include="Assets\90.png" />
+    <Resource Include="Assets\91.png" />
+    <Resource Include="Assets\92.png" />
+    <Resource Include="Assets\93.png" />
+    <Resource Include="Assets\94.png" />
+    <Resource Include="Assets\95.png" />
+    <Resource Include="Assets\96.png" />
+    <Resource Include="Assets\97.png" />
+    <Resource Include="Assets\98.png" />
+    <Resource Include="Assets\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\11.png" />
+    <Resource Include="Assets\12.png" />
+    <Resource Include="Assets\13.png" />
+    <Resource Include="Assets\14.png" />
+    <Resource Include="Assets\15.png" />
+    <Resource Include="Assets\16.png" />
+    <Resource Include="Assets\17.png" />
+    <Resource Include="Assets\18.png" />
+    <Resource Include="Assets\19.png" />
+    <Resource Include="Assets\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="printer.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
